@@ -14,17 +14,17 @@
       --text-color: #1a1a1a;
       --nav-bg: #f4f4f4;
       --nav-text: #1a1a1a;
-      --accent: #3b82f6;
+      --accent: #007FFF;
       --footer-bg: #f0f0f0;
     }
 
     body.dark {
-      --bg-color: #0f172a;
+      --bg-color: #232323;
       --text-color: #e5e7eb;
-      --nav-bg: #020617;
+      --nav-bg: #000000;
       --nav-text: #e5e7eb;
-      --accent: #38bdf8;
-      --footer-bg: #020617;
+      --accent: #007FFF;
+      --footer-bg: #000000;
     }
 
     /* ------------------------------
@@ -53,7 +53,7 @@
     }
 
     /* ------------------------------
-      BRAND + LOGO ICON
+       BRAND + SVG ICON
     ------------------------------ */
     .brand {
       display: flex;
@@ -74,7 +74,30 @@
     }
 
     /* ------------------------------
-       TOP NAV BAR
+       BRAND LOGO (PNG)
+    ------------------------------ */
+    .logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    /* Show dark logo in dark mode */
+    body.dark .logo-light {
+      display: none;
+    }
+
+    body.dark .logo-dark {
+      display: inline-block;
+    }
+
+    /* ------------------------------
+      TOP NAV BAR
     ------------------------------ */
     .navbar {
       display: flex;
@@ -208,24 +231,29 @@
 
   </style>
 </head>
-<body>
-
+<body class="dark">
   <!-- TOP NAV -->
   <header class="navbar">
     <div class="brand">
-      <span class="logo-icon" aria-hidden="true">
-        <!-- Simple SVG logo -->
-        <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M12 2C8 7 6 9 6 12a6 6 0 0012 0c0-3-2-5-6-10z"/>
-        </svg>
-      </span>
+      <a href="https://www.psithyros.com/">
+      <img
+        src="assets/psithyros-logo-light-2026.png"
+        alt="Site logo"
+        class="logo logo-light"
+      />
+      <img
+        src="assets/psithyros-logo-dark-2026.png"
+        alt="Site logo"
+        class="logo logo-dark"
+      />
+      </a>
       <span class="brand-text">psithyros</span>
     </div>
 
     <nav class="nav-links" id="navLinks">
       <a href="#">Products</a>
       <a href="#">Projects</a>
-      <a href="#">Contact</a>
+      <a href="#">About</a>
     </nav>
 
     <div class="nav-controls">
@@ -241,19 +269,22 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <h1>Welcome</h1>
-    <p>
-      Thank you for visiting psithyros! We are a software development and consulting company specialized in cloud services, distributed systems, and AI integration. 
-      Our engineering team has experiences at Microsoft, Accenture, and Sun Microsystems; and our leadership team has served as executives at Nasdaq listed public companies.
-    </p>
-    <p>
-      We are heads-down working on projects right now, so we don't have much content to share yet. Please check back soon for updates! In the meantime, feel free to reach out to us at <a href="mailto:info@psithyros.com">info@psithyros.com</a>.
-    </p>
+    <div style="text-align: center;"><img src="assets/psithyros-logo-brand-blue-2026.png" alt="psithyros logo" style="width: auto; height: 100px;"></div>
+    <div style="max-width: 768px; margin: 2rem auto;">
+      <h1>Welcome</h1>
+      <p>
+        Thank you for visiting psithyros! We are a software development and consulting company specialized in cloud services, distributed systems, and AI integration. 
+        Our engineering team has experiences at Microsoft, Accenture, Sun Microsystems, and more; and our leadership team has served as executives at Nasdaq-listed public companies.
+      </p>
+      <p>
+        We are new and heads-down working on projects right now, so we don't have much to share yet. Please check back soon for updates! In the meantime, feel free to reach out to us at <a href="mailto:info@psithyros.com">info@psithyros.com</a>.
+      </p>
+    </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div>© psithyros 2026</div>
+    <div>&copy; 2026 psithyros</div>
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
   </footer>
