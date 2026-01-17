@@ -1,5 +1,276 @@
-<html>
-  <body>
-    Hello World!
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>psithyros</title>
+
+  <style>
+    /* ------------------------------
+       CSS VARIABLES (THEMES)
+    ------------------------------ */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --nav-bg: #f4f4f4;
+      --nav-text: #1a1a1a;
+      --accent: #3b82f6;
+      --footer-bg: #f0f0f0;
+    }
+
+    body.dark {
+      --bg-color: #0f172a;
+      --text-color: #e5e7eb;
+      --nav-bg: #020617;
+      --nav-text: #e5e7eb;
+      --accent: #38bdf8;
+      --footer-bg: #020617;
+    }
+
+    /* ------------------------------
+       GLOBAL STYLES
+    ------------------------------ */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+      min-height: calc(100vh - 120px);
+    }
+
+    /* ------------------------------
+      BRAND + LOGO ICON
+    ------------------------------ */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--nav-text);
+    }
+
+    .logo-icon svg {
+      display: block;
+      fill: var(--accent);
+      transition: fill 0.3s ease;
+    }
+
+    .brand-text {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* ------------------------------
+       TOP NAV BAR
+    ------------------------------ */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--nav-bg);
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--nav-text);
+      font-weight: 500;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* ------------------------------
+       HAMBURGER
+    ------------------------------ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--nav-text);
+      transition: all 0.3s ease;
+    }
+
+    /* ------------------------------
+       THEME TOGGLE BUTTON
+    ------------------------------ */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--nav-text);
+      color: var(--nav-text);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    /* ------------------------------
+       MOBILE STYLES
+    ------------------------------ */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        padding: 1rem;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ------------------------------
+       FOOTER / BOTTOM LINKS BAR
+    ------------------------------ */
+    footer {
+      background-color: var(--footer-bg);
+      padding: 1rem;
+      display: flex;
+      justify-content: left;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+
+    footer a:hover {
+      opacity: 1;
+    }
+
+    /* ------------------------------
+    LINK UNDERLINE HOVER EFFECT
+    ------------------------------ */
+    .nav-links a,
+    footer a {
+      position: relative;
+    }
+
+    .nav-links a::after,
+    footer a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    footer a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <header class="navbar">
+    <div class="brand">
+      <span class="logo-icon" aria-hidden="true">
+        <!-- Simple SVG logo -->
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2C8 7 6 9 6 12a6 6 0 0012 0c0-3-2-5-6-10z"/>
+        </svg>
+      </span>
+      <span class="brand-text">psithyros</span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Products</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle">Theme</button>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Welcome</h1>
+    <p>
+      Thank you for visiting psithyros! We are a software development and consulting company specialized in cloud services, distributed systems, and AI integration. 
+      Our engineering team has experiences at Microsoft, Accenture, and Sun Microsystems; and our leadership team has served as executives at Nasdaq listed public companies.
+    </p>
+    <p>
+      We are heads-down working on projects right now, so we don't have much content to share yet. Please check back soon for updates! In the meantime, feel free to reach out to us at <a href="mailto:info@psithyros.com">info@psithyros.com</a>.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© psithyros 2026</div>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const themeToggle = document.getElementById("themeToggle");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
+</body>
 </html>
