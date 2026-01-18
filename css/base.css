@@ -1,0 +1,89 @@
+    /* ------------------------------
+       CSS VARIABLES (THEMES)
+    ------------------------------ */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --nav-bg: #f4f4f4;
+      --nav-text: #1a1a1a;
+      --accent: #007FFF;
+      --footer-bg: #f0f0f0;
+    }
+
+    body.dark {
+      --bg-color: #232323;
+      --text-color: #e5e7eb;
+      --nav-bg: #000000;
+      --nav-text: #e5e7eb;
+      --accent: #007FFF;
+      --footer-bg: #000000;
+    }
+
+    /* ------------------------------
+       GLOBAL STYLES
+    ------------------------------ */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+      min-height: calc(100vh - 120px);
+    }
+
+    /* ------------------------------
+       BRAND + SVG ICON
+    ------------------------------ */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--nav-text);
+    }
+
+    .logo-icon svg {
+      display: block;
+      fill: var(--accent);
+      transition: fill 0.3s ease;
+    }
+
+    .brand-text {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* ------------------------------
+       BRAND LOGO (PNG)
+    ------------------------------ */
+    .logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    /* Show dark logo in dark mode */
+    body.dark .logo-light {
+      display: none;
+    }
+
+    body.dark .logo-dark {
+      display: inline-block;
+    }
