@@ -45,8 +45,8 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
     <footer>
         <span>&copy; 2026 psithyros</span>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
     </footer>
     `;
   }
