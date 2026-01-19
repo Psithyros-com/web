@@ -15,7 +15,7 @@ class SiteHeader extends HTMLElement {
                 class="logo logo-dark"
             />
             </a>
-            <span class="brand-text">psithyros</span>
+            <span class="brand-text"></span>
         </div>
 
         <nav class="nav-links" id="navLinks">
