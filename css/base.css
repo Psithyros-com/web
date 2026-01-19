@@ -10,6 +10,7 @@
       --footer-bg: #f0f0f0;
     }
 
+    html.dark,
     body.dark {
       --bg-color: #232323;
       --text-color: #e5e7eb;
@@ -69,8 +70,8 @@
        BRAND LOGO (PNG)
     ------------------------------ */
     .logo {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       object-fit: contain;
       transition: opacity 0.2s ease;
     }
@@ -80,10 +81,10 @@
     }
 
     /* Show dark logo in dark mode */
-    body.dark .logo-light {
+    html.dark .logo-light {
       display: none;
     }
 
-    body.dark .logo-dark {
+    html.dark .logo-dark {
       display: inline-block;
     }
