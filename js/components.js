@@ -1,9 +1,10 @@
+// HEADER
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <header class="navbar">
         <div class="brand">
-            <a href="index.html" class="brand-link">
+            <a href="index.html">
             <img
                 src="assets/psithyros-logo-light-2026.png"
                 alt="Site logo"
@@ -70,6 +71,7 @@ class SiteHeader extends HTMLElement {
 }
 customElements.define("site-header", SiteHeader);
 
+// FOOTER
 class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
