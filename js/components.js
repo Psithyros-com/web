@@ -3,7 +3,7 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
     <header class="navbar">
         <div class="brand">
-            <a href="https://www.psithyros.com/">
+            <a href="index.html" class="brand-link">
             <img
                 src="assets/psithyros-logo-light-2026.png"
                 alt="Site logo"
@@ -74,7 +74,7 @@ class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer>
-        <span>&copy; 2026 psithyros</span>
+        <span>&copy; 2026 <a href="index.html">Psithyros</a></span>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
     </footer>

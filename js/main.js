@@ -15,7 +15,11 @@ const applyTheme = (theme) => {
 };
 // Initial theme & apply saved theme
 const savedTheme = localStorage.getItem(THEME_KEY);
-applyTheme(savedTheme === "dark" ? "dark" : "light");
+if (savedTheme) {
+  applyTheme(savedTheme === "dark" ? "dark" : "light");
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  applyTheme("dark");
+}
 btn.addEventListener("click", () => {
   const isDark = document.documentElement.classList.toggle("dark");
   const newTheme = isDark ? "dark" : "light";
