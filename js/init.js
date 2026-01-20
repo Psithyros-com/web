@@ -5,7 +5,6 @@ if (theme === "dark") {
 
 /**
  * Dynamically loads the Google Analytics gtag.js script and initializes it.
- * @param {string} tagId The Google Analytics Tag ID (e.g., G-XXXXXXXXXX).
  */
 function loadGoogleAnalytics(tagId) {
   // Define the dataLayer and gtag function if not already present
