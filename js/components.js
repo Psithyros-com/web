@@ -20,9 +20,9 @@ class SiteHeader extends HTMLElement {
         </div>
 
         <nav class="nav-links" id="navLinks">
-            <a href="#">Products</a>
             <a href="#">Projects</a>
-            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Profile</a>
         </nav>
 
         <div class="nav-controls">

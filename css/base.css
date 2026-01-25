@@ -2,22 +2,22 @@
        CSS VARIABLES (THEMES)
     ------------------------------ */
     :root {
-      --bg-color: #ffffff;
+      --bg-color: #f4f4f4;
       --text-color: #1a1a1a;
       --nav-bg: #f4f4f4;
       --nav-text: #1a1a1a;
       --accent: #007FFF;
-      --footer-bg: #f0f0f0;
+      --footer-bg: #f4f4f4;
     }
 
     html.dark,
     body.dark {
       --bg-color: #232323;
       --text-color: #e5e7eb;
-      --nav-bg: #000000;
+      --nav-bg: #232323;
       --nav-text: #e5e7eb;
       --accent: #007FFF;
-      --footer-bg: #000000;
+      --footer-bg: #232323;
     }
 
     /* ------------------------------
@@ -29,7 +29,7 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: Google Sans Code, Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
