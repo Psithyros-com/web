@@ -29,7 +29,7 @@
 
     body {
       margin: 0;
-      font-family: Consolas, Lucida Sans, Arial, sans-serif;
+      font-family: Consolas, Lucida Sans, Roboto, Oxygen, Ubuntu, Cantarell, 'SF Pro','Open Sans', 'Helvetica Neue', Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
