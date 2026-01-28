@@ -76,7 +76,7 @@ class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer>
-        <span>&copy; 2026 <a href="index.html">Psithyros</a></span>
+        <span>&copy; 2026 <a href="index.html">Psithyros LLC</a></span>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
     </footer>
